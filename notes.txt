@@ -1,0 +1,37 @@
+Computer Training Registration System
+
+
+1. Delete Information
+    -If you delete student information then first enter <Student ID> then press <Enter>
+    -Then click the <Delete Information> button
+
+2. Browse Photo
+    -If need store student photo then click the <Browse Photo> button and select the photo
+    Note: Student photo size must be hold 220x220
+
+3. Cancel/Clear Information
+    -Cancel/Clear the student information from the fields
+
+4. Update/Change Information
+    -If need change any information of student then first enter <Student ID> then press <Enter>
+    -Then change information and click the <Update/Change Information> button
+
+5. Submit Student's Information
+    -Enter the necessary student information and click the <Submit Student's Information> button
+
+6. Add Course
+    1. Add/Update Course
+        -Enter course details then click the <Add/Update Course> button (Add new)
+        -If need change any course details then select any course details from the table then change course detals and click the <Add/Update Course> button (Update)
+    2. Delete Course
+        -If you delete any course details then select any course details from the table and click the <Delete Course> button
+
+7. View Info
+    -Show student's details click the <View Info> button and open the student details page
+    Note: See more details click any student details from the table
+
+8. Add Amount(Tk)
+    -Enter course amount and click the <Add Amount> button
+
+9. Money Reciept
+    -Get printable/pdf file student money recipet then first enter <Student ID> then press <Enter> and click the <Money Reciept> button
