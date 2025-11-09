@@ -2,32 +2,43 @@ from tkinter import *
 
 
 # root class
-class MainWindow:
+class App(Frame):
     def __init__(self, win):
-        self.win = win
-        self.clr = '#000080'
-        self.create_widget()
+        super().__init__(win)
+        self.win   = win
+        self.text  = "Not Free — This is a paid project, available after purchase!"
+        self.icon_visible = False
+
+        self.lb_icon = Label(self.win, text="⚠️", font=("Cambria", 37, "bold"), fg="red", justify="center")
+        self.lb_icon.place(relx=0.5, rely=0.35, anchor="center")
         
-    # create main widget
-    def create_widget(self):
-        self.top_frame = Frame(self.win)
-        self.top_frame.pack(side=TOP, fill=X)
-        self.lb_status = Label(self.top_frame, text=' Jonaki Computer Training Center', font='Cambria 28 bold', bg=self.clr, fg='white', anchor=W)
-        self.lb_status.pack(side=LEFT, fill=X, expand=1)
-        self.lb_status1 = Label(self.top_frame, text=u'\u232C'+' Registration '+u'\u232C', font='Cambria 28 bold', bg=self.clr, fg='white')
-        self.lb_status1.pack(side=LEFT, fill=X, expand=1)
-        self.bottom_frame = Frame(self.win)
-        self.bottom_frame.pack(side=BOTTOM, fill=X)
-        self.lb_status1 = Label(self.bottom_frame, text='[+880123456789] Rajshahi, Dhaka, Bangladesh [+880123456789]', font='Cambria 12 bold', bg=self.clr, fg='white')
-        self.lb_status1.pack(side=TOP, fill=X, expand=1)
-        self.lb_status2 = Label(self.bottom_frame, text='email.one@gmail.com, email.two@gmail.com', font='Cambria 10 bold', bg=self.clr, fg='white')
-        self.lb_status2.pack(side=TOP, fill=X, expand=1)
+        self.lb_text = Label(self.win, text=self.text, font=("Cambria", 19, "bold"), wraplength=700, justify="center")
+        self.lb_text.place(relx=0.5, rely=0.46, anchor="center")
+
+        self.blink_icon()
+
+
+    def blink_icon(self):
+        if self.icon_visible:
+            self.lb_icon.config(fg="#F0F0ED")
+            self.icon_visible = False
+        else:
+            self.lb_icon.config(fg="red")
+            self.icon_visible = True
+        self.win.after(600, self.blink_icon)
 
 
 # root
 if __name__ == '__main__':
     win = Tk()
-    win.title('Jonaki Computer Training Center')
+    win.title('Example App')
+
+    w, h = 850, 500
+    sw = win.winfo_screenwidth()
+    sh = win.winfo_screenheight()
+    x, y = (sw - w) // 2, (sh - h) // 2
+    win.geometry(f'{w}x{h}+{x}+{y-40}')
     win.resizable(0, 0)
-    app = MainWindow(win)
+
+    app = App(win)
     win.mainloop()
